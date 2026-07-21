@@ -2,10 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ReactLenis } from "lenis/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "./components/ui/Tooltip";
-import { Toaster as sonner } from "@component/ui/sonner";
-import { Toaster } from "@component/ui/toaster";
+import { Toaster as Sonner } from "./components/ui/Sonner";
+import { Toaster } from "./components/ui/Toaster";
 import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+// import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -27,11 +27,11 @@ function App() {
         >
           <TooltipProvider>
             <Toaster />
-            <sonner />
+            <Sonner />
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Index />} />
-                <Route path="*" element={<NotFound />} />
+                {/* <Route path="*" element={<NotFound />} /> */}
               </Routes>
             </BrowserRouter>
           </TooltipProvider>
