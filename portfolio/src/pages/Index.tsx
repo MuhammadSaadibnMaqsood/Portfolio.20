@@ -14,6 +14,7 @@ import { Github, Linkedin, Instagram, Mail } from "lucide-react";
 // import Testimonial from "./Testimonial";
 import Navigation from "../components/Navigation";
 import About from "./About";
+import SplashCursor from "../components/SplashCursor";
 
 const CursorFollower = () => {
   const mouseX = useMotionValue(0);
@@ -315,6 +316,10 @@ const Index = () => {
         <Availability />
         <SocialStrip />
         <SpinningCTA />
+
+        <div className="hidden lg:block ">
+          <SplashCursor />
+        </div>
 
         {/* Spacer so heading block anchors to the bottom of the hero,
             like the rest of the top-row items which are position: absolute */}
