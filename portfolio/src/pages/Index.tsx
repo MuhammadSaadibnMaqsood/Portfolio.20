@@ -371,7 +371,7 @@ const Index = () => {
       </section>
 
       <div className="relative z-20 w-full bg-transparent">
-        <div id="about" className="h-screen w-full pointer-events-none"></div>
+        <div id="about" className="h-[200vh] w-full pointer-events-none"></div>
       </div>
     </div>
   );
