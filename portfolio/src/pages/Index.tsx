@@ -12,7 +12,8 @@ import { Github, Linkedin, Instagram, Mail } from "lucide-react";
 // import Footer from "./Footer";
 // import Contact from "./Contact";
 // import Testimonial from "./Testimonial";
-// import Navigation from "../components/Navigation";
+import Navigation from "../components/Navigation";
+import About from "./About";
 
 const CursorFollower = () => {
   const mouseX = useMotionValue(0);
@@ -298,68 +299,79 @@ const Index = () => {
       <GrainOverlay />
       <BrandLogo />
       <CursorFollower />
+      <Navigation />
+
+      <div className="fixed inset-0 z-0 bg-white text-black">
+        <About />
+      </div>
 
       {/* Top Right Mobile Social Icons */}
       <div className="fixed top-6 right-6 z-50 md:hidden">
         <MobileSocialStrip />
       </div>
 
-      <section className="relative h-screen bg-black flex flex-col px-6 py-12 md:px-16 md:py-16 z-20 overflow-hidden">
+      <section className="relative h-screen bg-black flex flex-col justify-between px-6 py-12 md:px-16 md:py-16 z-20 overflow-hidden">
+        {/* Top row: availability badge + decorative CTA/social layers */}
         <Availability />
         <SocialStrip />
         <SpinningCTA />
+
+        {/* Spacer so heading block anchors to the bottom of the hero,
+            like the rest of the top-row items which are position: absolute */}
+        <div className="mt-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="w-fit"
+          >
+            <a
+              href="#contact"
+              className="group relative overflow-hidden border border-white/30 px-5 py-3 flex items-center gap-3 hover:border-white transition-colors duration-500 w-fit mb-6 md:hidden"
+            >
+              <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></span>
+              <span className="relative font-sans font-black text-[10px] tracking-[0.25rem] uppercase text-white group-hover:text-black transition-colors duration-300 z-10">
+                GET IN TOUCH
+              </span>
+
+              <svg
+                className="relative w-3 h-3 text-white group-hover:text-black transition-colors duration-300 z-10"
+                viewBox="0 0 12 12"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M1 6h10M6 1l5 5-5 5" />
+              </svg>
+            </a>
+
+            <h1 className="font-sans font-bold text-7xl md:text-8xl lg:text-[9rem] xl:text-[11rem] leading-[0.85] tracking-tighter text-white uppercase text-left">
+              Driven <br />
+              by logic
+            </h1>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 w-full gap-4 mt-8 md:mt-10">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+              className="col-span-1 md:col-span-5 lg:col-span-4"
+            >
+              <div className="w-12 h-[2px] bg-white mb-6 md:hidden"></div>
+              <p className="font-sans text-xs md:text-sm font-medium text-white leading-relaxed tracking-wide uppercase text-left">
+                Building robust software, automating the complex, and turning
+                static systems into intelligent ones.
+              </p>
+            </motion.div>
+
+            <ScrollCue />
+          </div>
+        </div>
       </section>
 
-      <div className="z-10 mt-auto mb-6 md:mb-8 px-6 md:px-16">
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 5, delay: 0, ease: [0.16, 1, 0.3, 1] }}
-          className="w-fit"
-        >
-          <a
-            href="#contact"
-            className="group relative overflow-hidden border border-white/30 px-5 py-3 flex items-center gap-3 hover:border-white transition-colors duration-500 w-fit mb-6 md:hidden"
-          >
-            <span className="absolute inset-0 bg-white translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-in-out"></span>
-            <span className="relative font-sans font-black text-[10px] tracking-[0.25rem] uppercase text-white group-hover:text-black transition-colors duration-300 z-10">
-              GET IN TOUCH
-            </span>
-
-            <svg
-              className="relative w-3 h-3 text-white group-hover:text-black transition-colors duration-300 z-10"
-              viewBox="0 0 12 12"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path d="M1 6h10M6 1l5 5-5 5" />
-            </svg>
-          </a>
-
-          <h1 className="font-sans font-bold text-7xl md:text-8xl lg:text-[9rem] xl:text-[11rem] leading-[0.85] tracking-tighter text-white uppercase text-left">
-            Driven <br />
-            by logic
-          </h1>
-        </motion.div>
-      </div>
-
-      <div className="z-10 grid grid-cols-1 md:grid-cols-12 w-full gap-4 mb-8 md:mb-0 px-6 md:px-16 pb-10 md:pb-14">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
-          className="col-span-1 md:col-span-5 lg:col-span-4"
-        >
-          <div className="w-12 h-[2px] bg-white mb-6 md:hidden"></div>
-          <p className="font-sans text-xs md:text-sm font-medium text-white leading-relaxed tracking-wide uppercase text-left">
-            Building robust software, automating the complex, and turning static
-            systems into intelligent ones.
-          </p>
-        </motion.div>
-
-        <ScrollCue />
+      <div className="relative z-20 w-full bg-transparent">
+        <div id="about" className="h-screen w-full pointer-events-none"></div>
       </div>
     </div>
   );
