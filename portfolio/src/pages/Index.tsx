@@ -16,6 +16,7 @@ import Navigation from "../components/Navigation";
 import About from "./About";
 import SplashCursor from "../components/SplashCursor";
 import SkillPhilosophy from "../components/SkillPhilosophy";
+import Footer from "../components/Footer";
 
 const CursorFollower = () => {
   const mouseX = useMotionValue(0);
@@ -384,6 +385,10 @@ const Index = () => {
         <div className="bg-white text-black relative z-20">
           {/* <VectorBridge /> */}
           <SkillPhilosophy />
+        </div>
+
+        <div>
+          <Footer/>
         </div>
       </div>
     </div>
