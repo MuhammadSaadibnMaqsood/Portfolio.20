@@ -7,7 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { Github, Linkedin, Instagram, Mail } from "lucide-react";
-// import SelectedWorks from "./SelectedWorks";
+import SelectedWorks from "../components/SelectedWork";
 // import VectorBridge from "./Vector-Bridge";
 // import Footer from "./Footer";
 // import Contact from "./Contact";
@@ -376,7 +376,10 @@ const Index = () => {
       </section>
 
       <div className="relative z-20 w-full bg-transparent">
-        <div id="about" className="h-[200vh] w-full pointer-events-none"></div>
+        <div id="about" className="h-screen w-full pointer-events-none" />
+        <div id="work" className="bg-black text-white relative z-20">
+          <SelectedWorks />
+        </div>
       </div>
     </div>
   );
