@@ -7,8 +7,6 @@
    All colors in HSL format
 */
 
-
-
 @layer base {
   :root {
     /* Core palette - Pure white and deep black */
@@ -61,8 +59,8 @@
     --sidebar-ring: 0 0% 8%;
 
     /* Typography */
-    --font-serif: 'Playfair Display', Georgia, serif;
-    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-serif: "Playfair Display", Georgia, serif;
+    --font-sans: "Inter", system-ui, sans-serif;
 
     /* Spacing */
     --section-padding: 8rem;
@@ -111,7 +109,7 @@
     width: 100%;
     max-width: 100%;
     overflow-x: clip;
-    background-color: theme('colors.black');
+    background-color: theme("colors.black");
   }
 
   body {
@@ -142,14 +140,13 @@
 }
 
 @layer components {
-
   /* Editorial link with underline animation */
   .editorial-link {
     @apply relative inline-block text-foreground uppercase tracking-widest text-sm font-medium;
   }
 
   .editorial-link::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 w-full h-px bg-foreground;
     transform: scaleX(1);
     transform-origin: left;
@@ -173,7 +170,6 @@
     @apply italic;
   }
 }
-
 
 /* carousel animation  */
 
@@ -261,7 +257,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .info-row {

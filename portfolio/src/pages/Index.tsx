@@ -8,13 +8,14 @@ import {
 } from "framer-motion";
 import { Github, Linkedin, Instagram, Mail } from "lucide-react";
 import SelectedWorks from "../components/SelectedWork";
-// import VectorBridge from "./Vector-Bridge";
+import VectorBridge from "../components/VectorBridge";
 // import Footer from "./Footer";
 // import Contact from "./Contact";
 // import Testimonial from "./Testimonial";
 import Navigation from "../components/Navigation";
 import About from "./About";
 import SplashCursor from "../components/SplashCursor";
+import SkillPhilosophy from "../components/SkillPhilosophy";
 
 const CursorFollower = () => {
   const mouseX = useMotionValue(0);
@@ -379,6 +380,10 @@ const Index = () => {
         <div id="about" className="h-screen w-full pointer-events-none" />
         <div id="work" className="bg-black text-white relative z-20">
           <SelectedWorks />
+        </div>
+        <div className="bg-white text-black relative z-20">
+          {/* <VectorBridge /> */}
+          <SkillPhilosophy />
         </div>
       </div>
     </div>
